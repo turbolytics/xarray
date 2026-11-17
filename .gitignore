@@ -108,3 +108,6 @@ pixi.lock
 # recipe
 /ci/recipe/recipe.yaml
 /doc/environment.yml
+
+# Temper evidence
+/.temper/

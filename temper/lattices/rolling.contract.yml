@@ -1,0 +1,10 @@
+id: rolling.contract
+description: >
+  What a rolling or cumulative reduction promises on every compute path. The
+  reference is NumPy applied to each window by hand. argmin and argmax must
+  return the first matching index inside the array, as np.argmin does.
+applies_to: rolling_path
+requires: [ci]
+members:
+  - key: reductions_match_numpy
+  - key: argmin_argmax_match_numpy

@@ -1,0 +1,8 @@
+id: groupby.flox
+kind: groupby_path
+feature: groupby.flox
+answers:
+  groupby.contract:
+    reductions_match_numpy: supported
+    any_all_match_numpy: supported
+    min_count_follows_skipna: supported

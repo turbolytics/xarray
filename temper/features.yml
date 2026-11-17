@@ -1,0 +1,30 @@
+# The compute paths this map covers. Each one is a way xarray can run the same
+# reduction, chosen by xr.set_options or by the array type.
+features:
+  - id: core.dataarray
+    description: "DataArray semantics that do not depend on a compute path."
+    requires: [ci]
+  - id: rolling.numpy
+    description: "Rolling with use_numbagg=False and use_bottleneck=False."
+    requires: [ci]
+  - id: rolling.numbagg
+    description: "Rolling with the default options (numbagg on)."
+    requires: [ci]
+  - id: rolling.bottleneck
+    description: "Rolling with use_bottleneck=True and use_numbagg=False."
+    requires: [ci]
+  - id: rolling.dask
+    description: "Rolling on a dask array with the default options."
+    requires: [ci]
+  - id: groupby.numpy
+    description: "GroupBy with use_flox=False."
+    requires: [ci]
+  - id: groupby.flox
+    description: "GroupBy with the default options (flox on, numbagg installed)."
+    requires: [ci]
+  - id: groupby.flox_numpy
+    description: "GroupBy through flox with engine='numpy'."
+    requires: [ci]
+  - id: groupby.dask_flox
+    description: "GroupBy on a dask array with the default options."
+    requires: [ci]

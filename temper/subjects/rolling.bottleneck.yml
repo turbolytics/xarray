@@ -1,0 +1,7 @@
+id: rolling.bottleneck
+kind: rolling_path
+feature: rolling.bottleneck
+answers:
+  rolling.contract:
+    reductions_match_numpy: supported
+    argmin_argmax_match_numpy: supported

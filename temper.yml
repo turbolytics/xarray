@@ -1,0 +1,6 @@
+temper: "0.1"
+project: xarray
+
+levels:
+  - name: ci
+    description: pytest, as CI runs it

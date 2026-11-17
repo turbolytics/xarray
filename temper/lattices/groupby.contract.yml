@@ -1,0 +1,12 @@
+id: groupby.contract
+description: >
+  What a groupby reduction promises on every compute path. The reference is
+  NumPy applied to each group by hand. any and all treat NaN as true, as
+  np.any does. min_count applies only when skipna is true or defaults to true
+  for the dtype, as the docstrings say.
+applies_to: groupby_path
+requires: [ci]
+members:
+  - key: reductions_match_numpy
+  - key: any_all_match_numpy
+  - key: min_count_follows_skipna

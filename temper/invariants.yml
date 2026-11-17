@@ -1,0 +1,38 @@
+invariants:
+  # xarray's own semantics, checked with hypothesis-generated arrays of float,
+  # int and bool data, including NaN, inf and integer extremes.
+  - id: core.align_then_add
+    claim: a + b under arithmetic_join=J equals xr.align(a, b, join=J) followed by +.
+    applies_to: core
+    requires: [ci]
+  - id: core.align_is_idempotent
+    claim: Aligning already aligned objects changes nothing.
+    applies_to: core
+    requires: [ci]
+  - id: core.concat_of_split
+    claim: Concatenating consecutive slices of an array along a dimension returns the array.
+    applies_to: core
+    requires: [ci]
+  - id: core.reduce_ignores_transpose
+    claim: A reduction along a named dimension gives the same values after transpose.
+    applies_to: core
+    requires: [ci]
+  - id: core.groupby_map_identity
+    claim: "groupby(...).map(lambda d: d) returns the original object."
+    applies_to: core
+    requires: [ci]
+  - id: core.keep_attrs
+    claim: A reduction with keep_attrs=True keeps the attrs unchanged.
+    applies_to: core
+    requires: [ci]
+  - id: core.sortby_reindex
+    claim: Sorting by a coordinate and reindexing to the original order returns the original.
+    applies_to: core
+    requires: [ci]
+  # Per compute path.
+  - id: rolling.equals_construct
+    claim: >
+      A rolling reduction equals the same reduction over rolling(...).construct(...),
+      for every window that holds window valid values.
+    applies_to: rolling_path
+    requires: [ci]

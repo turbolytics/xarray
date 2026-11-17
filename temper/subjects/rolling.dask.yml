@@ -1,0 +1,7 @@
+id: rolling.dask
+kind: rolling_path
+feature: rolling.dask
+answers:
+  rolling.contract:
+    reductions_match_numpy: supported
+    argmin_argmax_match_numpy: supported
